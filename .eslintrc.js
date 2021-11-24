@@ -3,11 +3,13 @@ module.exports = {
   env: {
     node: true,
   },
-  extends: ['plugin:vue/essential', 'eslint:recommended'],
+  extends: ['plugin:vue/essential', 'eslint:recommended', "plugin:prettier/recommended"],
   parserOptions: {
     parser: 'babel-eslint',
   },
+  "plugins": ["prettier"],
   rules: {
+    "prettier/prettier": "error",
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     // 自定义你的规则
@@ -21,17 +23,17 @@ module.exports = {
     //     },
     //   },
     // ],
-    'vue/html-indent': [
-      'error',
-      2,
-      {
-        attribute: 1,
-        baseIndent: 1,
-        closeBracket: 0,
-        alignAttributesVertically: false,
-        ignores: [],
-      },
-    ],
+    // 'vue/html-indent': [
+    //   'error',
+    //   2,
+    //   {
+    //     attribute: 1,
+    //     baseIndent: 1,
+    //     closeBracket: 0,
+    //     alignAttributesVertically: false,
+    //     ignores: [],
+    //   },
+    // ],
     'vue/no-deprecated-events-api': 'off',
     'vue/no-deprecated-dollar-listeners-api': 'off',
     'vue/no-deprecated-destroyed-lifecycle': 'off',
